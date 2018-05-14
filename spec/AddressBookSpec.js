@@ -1,12 +1,15 @@
 // Test Suit
 describe('Address Book', function() {
+    let addressBook, thisContact;
+
+    beforeEach(function() {
+        // Instantiate our objects
+        addressBook = new AddressBook(),
+        thisContact = new Contact();
+    });
 
     // Add Contact
     it('Should be able to add a contact', function() {
-
-        // Instantiate our objects
-        let addressBook = new AddressBook(),
-            thisContact = new Contact();
 
         // Add new contact
         addressBook.addContact(thisContact);
@@ -23,10 +26,6 @@ describe('Address Book', function() {
     // Delete Contact
     it('Should be able to delete a contact', function() {
 
-        // Instantiate our objects
-        let addressBook = new AddressBook(),
-            thisContact = new Contact();
-        
         // Delete contact
         addressBook.addContact(thisContact);
         addressBook.deleteContact(0);
