@@ -39,3 +39,13 @@ describe('Address Book', function() {
     });
 
 });
+
+
+// Async
+describe('Async Address Book', function () {
+    it('should grap initial contacts', function() {
+        let addressBook = new AddressBook();
+        addressBook.getInitialContacts();
+        expect(addressBook.initialComplete).toBe(true);
+    });
+});
