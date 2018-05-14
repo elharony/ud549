@@ -6,13 +6,37 @@ describe('Address Book', function() {
 
         // Instantiate our objects
         let addressBook = new AddressBook(),
-            newContact  = new Contact();
+            thisContact = new Contact();
 
         // Add new contact
-        addressBook.addContact(newContact);
+        addressBook.addContact(thisContact);
 
-        // Check if the new contact has been added successfully
-        expect(addressBook.getContact(0)).toBe(newContact);
+        /* 
+         * Expectations:
+         * - Check if the new contact has been added successfully
+         */
+        expect(addressBook.getContact(0)).toBe(thisContact);
 
     });
+
+
+    // Delete Contact
+    it('Should be able to delete a contact', function() {
+
+        // Instantiate our objects
+        let addressBook = new AddressBook(),
+            thisContact = new Contact();
+        
+        // Delete contact
+        addressBook.addContact(thisContact);
+        addressBook.deleteContact(0);
+
+        /* 
+         * Expectations:
+         * - Check if the new contact has been added successfully
+         */
+        expect(addressBook.getContact(0)).not.toBeDefined();
+
+    });
+
 });
