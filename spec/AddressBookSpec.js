@@ -33,7 +33,7 @@ describe('Address Book', function() {
 
         /* 
          * Expectations:
-         * - Check if the new contact has been added successfully
+         * - Check if the Contact has been deleted or not
          */
         expect(addressBook.getContact(0)).not.toBeDefined();
 
