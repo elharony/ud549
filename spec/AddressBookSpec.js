@@ -6,13 +6,13 @@ describe('Address Book', function() {
 
         // Instantiate our objects
         let addressBook = new AddressBook(),
-            newContact  = new newContact();
+            newContact  = new Contact();
 
         // Add new contact
         addressBook.addContact(newContact);
 
         // Check if the new contact has been added successfully
-        expect(addressBook.getCntact(0)).toBe(newContact);
+        expect(addressBook.getContact(0)).toBe(newContact);
 
     });
 });
