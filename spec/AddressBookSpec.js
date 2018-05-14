@@ -9,7 +9,7 @@ describe('Address Book', function() {
     });
 
     // Add Contact
-    it('Should be able to add a contact', function() {
+    it('should be able to add a contact', function() {
 
         // Add new contact
         addressBook.addContact(thisContact);
@@ -24,7 +24,7 @@ describe('Address Book', function() {
 
 
     // Delete Contact
-    it('Should be able to delete a contact', function() {
+    it('should be able to delete a contact', function() {
 
         // Delete contact
         addressBook.addContact(thisContact);
@@ -43,9 +43,18 @@ describe('Address Book', function() {
 
 // Async
 describe('Async Address Book', function () {
-    it('should grap initial contacts', function() {
-        let addressBook = new AddressBook();
-        addressBook.getInitialContacts();
+    let addressBook = new AddressBook();
+
+    // Make sure that we run our Async Method and it is ready now!
+    beforeEach(function(done) {
+        addressBook.getInitialContacts(function() {
+            done();
+        });
+    });
+
+    // Our Spec relies on `done()`
+    it('should grap initial contacts', function(done) {
         expect(addressBook.initialComplete).toBe(true);
+        done();
     });
 });
